@@ -26,37 +26,39 @@
       color: white;
     }
 
-    .player h2 {
-      margin: 0 0 15px;
-      font-size: 18px;
-      font-weight: 500;
-      opacity: 0.9;
+    h2 { margin-bottom: 15px; }
+
+    button {
+      background: #1db954;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
     }
 
-    audio {
-      width: 100%;
-      outline: none;
-      border-radius: 12px;
-    }
-
-    .note {
-      margin-top: 12px;
-      font-size: 12px;
-      opacity: 0.6;
+    button:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
   <div class="player">
-    <h2>🎵 Now Playing</h2>
-    <audio autoplay controls>
-      <source src="music.m4a" type="audio/mpeg">
-      مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+    <h2>🎵 Play Music</h2>
+    <button onclick="play()">▶ Play</button>
+    <audio id="audio">
+      <source src="music.mp3" type="audio/mp3">
     </audio>
-    <div class="note">Scan & Enjoy ✨</div>
   </div>
+
+  <script>
+    function play() {
+      document.getElementById('audio').play();
+    }
+  </script>
 
 </body>
 </html>
-
